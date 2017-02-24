@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page Template With Flexbox</title>
+
+  	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styleNew.css">
+</head>
+<body>
+  <header>
+    <h2><a href="#">Website Logo</a></h2>
+    <nav>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact us</a></li>
+    </nav>
+  </header>
+
+  <section class="first">
+    <div class="fone" style="background-image: url(assets/img/balloon.jpg);"></div>
+    <h1> Flexbox</h1>
+    <a href="#" class="btn">Download it Here</a>
+  </section>
+  <section class="content">
+    <h3 class="title">What is Lorem Ipsum?</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <hr />
+    <div id="grid">
+      <div class="images small" style="background-image: url(assets/img/coast.jpg);"></div>
+      <!-- onclick="block(this)" -->
+      <div class="images large" style="background-image: url(assets/img/hero.jpg);"></div>
+      <div class="images large" style="background-image: url(assets/img/island.jpg);"></div>
+      <div class="images small" style="background-image: url(assets/img/mountain.jpg);"></div>
+    </div>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+    </ul>
+    <p>Made by <a href="http://tutorialzine.com/" target="_blank">tutorialzine</a>. images courtesy to <a href="http://unsplash.com/" target="_blank">unsplash</a>.</p>
+		<p>No attribution required. you can remove this footer.</p>
+  </footer>
+
+  <script>
+
+
+    var block = document.getElementById('grid');
+
+    var selectImg;
+    block.onclick = function(event){
+    var target = event.target;
+
+    while(target != this){
+      if(target.classList[0] == 'images'){
+
+        highlight(target);
+        return;
+      }
+      target = target.parentNode;
+      }
+      }
+
+    function highlight(node){
+      if (selectImg) {
+      selectImg.classList.remove('highlight');
+      console.log(selectImg.classList);
+    }
+
+    selectImg = node;
+    selectImg.classList.add('highlight');
+    setTimeout(function(){
+      if(selectImg){
+      selectImg.classList.remove("highlight")
+    }},805)
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- var selectImg=node;
+selectImg.classList.add('highlight');
+console.log(selectImg.classList);
+setTimeout(function(){
+if(selectImg){
+selectImg.classList.remove("highlight")
+}},810)*/
+
+// function block(el){
+// // el.style.transform ='rotateY(180deg)';
+// el.style.transform ='rotate3d(8, 5, 1, 360deg)';
+// el.style.transition = '0.8s';
+// onclick="block(this)"; -->
+
+
+
+<!-- function block(el){
+    el.style.transform ='rotate3d(0, 10, 0, 360deg)';
+    el.style.transition = '2s'; -->
+    <!-- el.style.transform ='rotateY(180deg)';
+  }-->
